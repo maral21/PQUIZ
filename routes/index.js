@@ -6,4 +6,9 @@ router.get('/', function(req, res) {
   res.render('index', { title: 'Quiz' });
 });
 
+/* GET author. */
+router.get('/', function(req, res) {
+  res.render('author', { title: 'Autores' });
+});
+
 module.exports = router;
