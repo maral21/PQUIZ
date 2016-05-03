@@ -7,7 +7,7 @@ router.get('/', function(req, res) {
 });
 
 /* GET author. */
-router.get('/', function(req, res) {
+router.get('/author', function(req, res) {
   res.render('author', { title: 'Autores' });
 });
 
