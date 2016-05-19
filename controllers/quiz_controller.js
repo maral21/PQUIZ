@@ -3,8 +3,8 @@ var models = require('../models');
 //GET /quizes/question
 exports.question= function(req,res,next){
 	models
-	.quizes.findOne()//Busca la primera pregunta
-	.then(function(quiz)){
+	.Quiz.findOne()//Busca la primera pregunta
+	.then(function(quiz){
 		if(quiz){
 	var answer = req.query.answer ||'';
 	res.render('quizes/question',{question:quiz.question, answer : answer}); 
@@ -18,9 +18,8 @@ exports.question= function(req,res,next){
 
 exports.check = function(req,res,next){
  models
- .quiz
- .findOne()//Busca la primera pregunta
- .then(function(quiz)){
+ .Quiz.findOne()//Busca la primera pregunta
+ .then(function(quiz){
  	if(quiz){
     var answer = req.query.answer ||'';
 	var result= ((answer === quiz.answer) ? 'Correcta' : 'Incorrecta');
